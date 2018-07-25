@@ -177,8 +177,11 @@ FakesAssemblies/
 *.nuget.targets
 project.lock.json
 .vs/
-Tests/
-TestFiles/
+#Tests/
+#TestFiles/
  
 # git merge files
 *.orig
+
+.store/
+*.exe

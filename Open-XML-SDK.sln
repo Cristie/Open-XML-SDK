@@ -1,23 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml", "DocumentFormat.OpenXml\DocumentFormat.OpenXml.csproj", "{16941A4A-F8DE-4C8D-BA2B-3C0774848D4B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml.Tests", "DocumentFormat.OpenXml.Tests\DocumentFormat.OpenXml.Tests.csproj", "{B92240AF-6E87-4428-9C5A-371178A04E5B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryFormatConverter", "BinaryFormatConverter\BinaryFormatConverter.csproj", "{E97A956D-8113-45B6-9002-2ED651A6CD6C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B53C729-D408-450D-B755-7A57184CDE93}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		dir.props = dir.props
-		dir.targets = dir.targets
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
 		GitVersion.yml = GitVersion.yml
-		LICENSE.txt = LICENSE.txt
+		LICENSE = LICENSE
 		README.md = README.md
+		rules.ruleset = rules.ruleset
+		stylecop.json = stylecop.json
+		Tests.targets = Tests.targets
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml", "src\DocumentFormat.OpenXml\DocumentFormat.OpenXml.csproj", "{16941A4A-F8DE-4C8D-BA2B-3C0774848D4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml.Tests", "test\DocumentFormat.OpenXml.Tests\DocumentFormat.OpenXml.Tests.csproj", "{B92240AF-6E87-4428-9C5A-371178A04E5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml.Packaging.Tests", "test\DocumentFormat.OpenXml.Packaging.Tests\DocumentFormat.OpenXml.Packaging.Tests.csproj", "{B9138975-0D18-4EC7-92C3-A2DB71DF64E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A4DF60EB-3AA5-48F0-B4D2-3F94B8E62F03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0782A132-968D-4BDD-911A-2C3074EAF886}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml.Tests.Assets", "test\DocumentFormat.OpenXml.Tests.Assets\DocumentFormat.OpenXml.Tests.Assets.csproj", "{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentFormat.OpenXml.Benchmarks", "test\DocumentFormat.OpenXml.Benchmarks\DocumentFormat.OpenXml.Benchmarks.csproj", "{B4604C70-721C-42C4-9D29-87E9084E927F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,12 +44,30 @@ Global
 		{B92240AF-6E87-4428-9C5A-371178A04E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B92240AF-6E87-4428-9C5A-371178A04E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B92240AF-6E87-4428-9C5A-371178A04E5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E97A956D-8113-45B6-9002-2ED651A6CD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E97A956D-8113-45B6-9002-2ED651A6CD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E97A956D-8113-45B6-9002-2ED651A6CD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E97A956D-8113-45B6-9002-2ED651A6CD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9138975-0D18-4EC7-92C3-A2DB71DF64E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9138975-0D18-4EC7-92C3-A2DB71DF64E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9138975-0D18-4EC7-92C3-A2DB71DF64E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9138975-0D18-4EC7-92C3-A2DB71DF64E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4604C70-721C-42C4-9D29-87E9084E927F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4604C70-721C-42C4-9D29-87E9084E927F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4604C70-721C-42C4-9D29-87E9084E927F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4604C70-721C-42C4-9D29-87E9084E927F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16941A4A-F8DE-4C8D-BA2B-3C0774848D4B} = {A4DF60EB-3AA5-48F0-B4D2-3F94B8E62F03}
+		{B92240AF-6E87-4428-9C5A-371178A04E5B} = {0782A132-968D-4BDD-911A-2C3074EAF886}
+		{B9138975-0D18-4EC7-92C3-A2DB71DF64E9} = {0782A132-968D-4BDD-911A-2C3074EAF886}
+		{1F680DC8-8D1E-4EC9-84E1-72BCEAA7D458} = {0782A132-968D-4BDD-911A-2C3074EAF886}
+		{B4604C70-721C-42C4-9D29-87E9084E927F} = {0782A132-968D-4BDD-911A-2C3074EAF886}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F476383-E917-43D1-A1E5-9A61A47DA3F5}
 	EndGlobalSection
 EndGlobal
